@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		BC96BC4F2D4258AD00D4868D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */; };
-		BC96BC512D4258AD00D4868D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC502D4258AD00D4868D /* SceneDelegate.swift */; };
-		BC96BC532D4258AD00D4868D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC522D4258AD00D4868D /* ViewController.swift */; };
-		BC96BC562D4258AD00D4868D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC542D4258AD00D4868D /* Main.storyboard */; };
+		BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */; };
+		BC96BC562D4258AD00D4868D /* Currencies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC542D4258AD00D4868D /* Currencies.storyboard */; };
 		BC96BC582D4258AF00D4868D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC572D4258AF00D4868D /* Assets.xcassets */; };
 		BC96BC5B2D4258AF00D4868D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC592D4258AF00D4868D /* LaunchScreen.storyboard */; };
+		BC96BC642D426CBF00D4868D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC632D426CBF00D4868D /* AppCoordinator.swift */; };
+		BC96BC672D42EDEC00D4868D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC662D42EDEC00D4868D /* Coordinator.swift */; };
+		BC96BC6B2D42EF1E00D4868D /* CurrenciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC6A2D42EF1E00D4868D /* CurrenciesViewModel.swift */; };
+		BC96BC6D2D42EFCA00D4868D /* CurrenciesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC6C2D42EFCA00D4868D /* CurrenciesCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC96BC4B2D4258AD00D4868D /* ExchangeMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC96BC502D4258AD00D4868D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC96BC522D4258AD00D4868D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BC96BC552D4258AD00D4868D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
+		BC96BC552D4258AD00D4868D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Currencies.storyboard; sourceTree = "<group>"; };
 		BC96BC572D4258AF00D4868D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC96BC5A2D4258AF00D4868D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC96BC5C2D4258AF00D4868D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC96BC632D426CBF00D4868D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		BC96BC662D42EDEC00D4868D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BC96BC6A2D42EF1E00D4868D /* CurrenciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewModel.swift; sourceTree = "<group>"; };
+		BC96BC6C2D42EFCA00D4868D /* CurrenciesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		BC96BC4D2D4258AD00D4868D /* ExchangeMate */ = {
 			isa = PBXGroup;
 			children = (
-				BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */,
-				BC96BC502D4258AD00D4868D /* SceneDelegate.swift */,
-				BC96BC522D4258AD00D4868D /* ViewController.swift */,
-				BC96BC542D4258AD00D4868D /* Main.storyboard */,
+				BC96BC622D426CA900D4868D /* Application */,
+				BC96BC652D42EDDF00D4868D /* Coordinators */,
+				BC96BC682D42EEBD00D4868D /* MVVM */,
 				BC96BC572D4258AF00D4868D /* Assets.xcassets */,
 				BC96BC592D4258AF00D4868D /* LaunchScreen.storyboard */,
 				BC96BC5C2D4258AF00D4868D /* Info.plist */,
 			);
 			path = ExchangeMate;
+			sourceTree = "<group>";
+		};
+		BC96BC622D426CA900D4868D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BC96BC652D42EDDF00D4868D /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				BC96BC662D42EDEC00D4868D /* Coordinator.swift */,
+				BC96BC632D426CBF00D4868D /* AppCoordinator.swift */,
+				BC96BC6C2D42EFCA00D4868D /* CurrenciesCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BC96BC682D42EEBD00D4868D /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				BC96BC692D42EED900D4868D /* Currencies */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		BC96BC692D42EED900D4868D /* Currencies */ = {
+			isa = PBXGroup;
+			children = (
+				BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */,
+				BC96BC6A2D42EF1E00D4868D /* CurrenciesViewModel.swift */,
+				BC96BC542D4258AD00D4868D /* Currencies.storyboard */,
+			);
+			path = Currencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +168,7 @@
 			files = (
 				BC96BC5B2D4258AF00D4868D /* LaunchScreen.storyboard in Resources */,
 				BC96BC582D4258AF00D4868D /* Assets.xcassets in Resources */,
-				BC96BC562D4258AD00D4868D /* Main.storyboard in Resources */,
+				BC96BC562D4258AD00D4868D /* Currencies.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,21 +179,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC96BC532D4258AD00D4868D /* ViewController.swift in Sources */,
+				BC96BC6D2D42EFCA00D4868D /* CurrenciesCoordinator.swift in Sources */,
+				BC96BC642D426CBF00D4868D /* AppCoordinator.swift in Sources */,
+				BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */,
+				BC96BC672D42EDEC00D4868D /* Coordinator.swift in Sources */,
+				BC96BC6B2D42EF1E00D4868D /* CurrenciesViewModel.swift in Sources */,
 				BC96BC4F2D4258AD00D4868D /* AppDelegate.swift in Sources */,
-				BC96BC512D4258AD00D4868D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BC96BC542D4258AD00D4868D /* Main.storyboard */ = {
+		BC96BC542D4258AD00D4868D /* Currencies.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BC96BC552D4258AD00D4868D /* Base */,
 			);
-			name = Main.storyboard;
+			name = Currencies.storyboard;
 			sourceTree = "<group>";
 		};
 		BC96BC592D4258AF00D4868D /* LaunchScreen.storyboard */ = {
@@ -298,8 +342,9 @@
 				INFOPLIST_FILE = ExchangeMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Currencies;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,8 +375,9 @@
 				INFOPLIST_FILE = ExchangeMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Currencies;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
