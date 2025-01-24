@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC6710AA2D4443B700E19227 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = BC6710A92D4443B700E19227 /* Apollo */; };
 		BC96BC4F2D4258AD00D4868D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */; };
 		BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */; };
 		BC96BC562D4258AD00D4868D /* Currencies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC542D4258AD00D4868D /* Currencies.storyboard */; };
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6710AA2D4443B700E19227 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +142,9 @@
 			dependencies = (
 			);
 			name = ExchangeMate;
+			packageProductDependencies = (
+				BC6710A92D4443B700E19227 /* Apollo */,
+			);
 			productName = ExchangeMate;
 			productReference = BC96BC4B2D4258AD00D4868D /* ExchangeMate.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +173,9 @@
 				Base,
 			);
 			mainGroup = BC96BC422D4258AD00D4868D;
+			packageReferences = (
+				BC6710A82D4443B700E19227 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = BC96BC4C2D4258AD00D4868D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -433,6 +441,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BC6710A82D4443B700E19227 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BC6710A92D4443B700E19227 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC6710A82D4443B700E19227 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BC96BC432D4258AD00D4868D /* Project object */;
 }
