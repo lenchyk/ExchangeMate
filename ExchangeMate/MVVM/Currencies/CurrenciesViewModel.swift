@@ -12,7 +12,7 @@ protocol CurrenciesViewModelProtocol {
 }
 
 class CurrenciesViewModel: CurrenciesViewModelProtocol {
-    var coordinator: CurrenciesCoordinator?
+    var coordinator: AppCoordinator?
     
     init() {
         

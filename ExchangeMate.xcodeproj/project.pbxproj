@@ -13,9 +13,9 @@
 		BC96BC582D4258AF00D4868D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC572D4258AF00D4868D /* Assets.xcassets */; };
 		BC96BC5B2D4258AF00D4868D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC592D4258AF00D4868D /* LaunchScreen.storyboard */; };
 		BC96BC642D426CBF00D4868D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC632D426CBF00D4868D /* AppCoordinator.swift */; };
-		BC96BC672D42EDEC00D4868D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC662D42EDEC00D4868D /* Coordinator.swift */; };
 		BC96BC6B2D42EF1E00D4868D /* CurrenciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC6A2D42EF1E00D4868D /* CurrenciesViewModel.swift */; };
-		BC96BC6D2D42EFCA00D4868D /* CurrenciesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC6C2D42EFCA00D4868D /* CurrenciesCoordinator.swift */; };
+		BC96BC712D4414E600D4868D /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC702D4414E600D4868D /* Storyboardable.swift */; };
+		BC96BC732D44395300D4868D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC722D44395300D4868D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		BC96BC5A2D4258AF00D4868D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC96BC5C2D4258AF00D4868D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC96BC632D426CBF00D4868D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		BC96BC662D42EDEC00D4868D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BC96BC6A2D42EF1E00D4868D /* CurrenciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewModel.swift; sourceTree = "<group>"; };
-		BC96BC6C2D42EFCA00D4868D /* CurrenciesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCoordinator.swift; sourceTree = "<group>"; };
+		BC96BC702D4414E600D4868D /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		BC96BC722D44395300D4868D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,10 @@
 		BC96BC4D2D4258AD00D4868D /* ExchangeMate */ = {
 			isa = PBXGroup;
 			children = (
+				BC96BC6F2D4414D300D4868D /* Helpers */,
+				BC96BC6E2D4414CA00D4868D /* Extensions */,
 				BC96BC622D426CA900D4868D /* Application */,
-				BC96BC652D42EDDF00D4868D /* Coordinators */,
+				BC96BC652D42EDDF00D4868D /* Coordinator */,
 				BC96BC682D42EEBD00D4868D /* MVVM */,
 				BC96BC572D4258AF00D4868D /* Assets.xcassets */,
 				BC96BC592D4258AF00D4868D /* LaunchScreen.storyboard */,
@@ -80,14 +82,12 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		BC96BC652D42EDDF00D4868D /* Coordinators */ = {
+		BC96BC652D42EDDF00D4868D /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				BC96BC662D42EDEC00D4868D /* Coordinator.swift */,
 				BC96BC632D426CBF00D4868D /* AppCoordinator.swift */,
-				BC96BC6C2D42EFCA00D4868D /* CurrenciesCoordinator.swift */,
 			);
-			path = Coordinators;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		BC96BC682D42EEBD00D4868D /* MVVM */ = {
@@ -106,6 +106,22 @@
 				BC96BC542D4258AD00D4868D /* Currencies.storyboard */,
 			);
 			path = Currencies;
+			sourceTree = "<group>";
+		};
+		BC96BC6E2D4414CA00D4868D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC96BC702D4414E600D4868D /* Storyboardable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BC96BC6F2D4414D300D4868D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BC96BC722D44395300D4868D /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC96BC6D2D42EFCA00D4868D /* CurrenciesCoordinator.swift in Sources */,
 				BC96BC642D426CBF00D4868D /* AppCoordinator.swift in Sources */,
+				BC96BC712D4414E600D4868D /* Storyboardable.swift in Sources */,
 				BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */,
-				BC96BC672D42EDEC00D4868D /* Coordinator.swift in Sources */,
 				BC96BC6B2D42EF1E00D4868D /* CurrenciesViewModel.swift in Sources */,
 				BC96BC4F2D4258AD00D4868D /* AppDelegate.swift in Sources */,
+				BC96BC732D44395300D4868D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +374,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -391,7 +407,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

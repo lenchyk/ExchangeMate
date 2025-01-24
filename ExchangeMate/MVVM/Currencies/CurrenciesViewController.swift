@@ -7,17 +7,10 @@
 
 import UIKit
 
-class CurrenciesViewController: UIViewController {
+class CurrenciesViewController: UIViewController, Storyboardable {
     var viewModel: CurrenciesViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
-
-extension CurrenciesViewController {
-    static func instantiate() -> CurrenciesViewController? {
-        return UIStoryboard(name: "Currencies", bundle: nil).instantiateViewController(withIdentifier: "CurrenciesViewController") as? CurrenciesViewController
-    }
-}
-
