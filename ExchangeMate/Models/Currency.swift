@@ -12,7 +12,7 @@ struct Currency {
     var date: String
     var baseCurrency: String
     var quoteCurrency: String
-    var quote: BigDecimal
+    var quote: String
     var isFavourited: Bool = false
     
     init(remoteCurrency: LatestEuroQuery.Data.Latest) {
@@ -28,7 +28,7 @@ extension Currency: Faking {
         date = "2020-04-08"
         baseCurrency = "EUR"
         quoteCurrency = "CHF"
-        quote = BigDecimal(1.23993)
+        quote = "1.23993"
     }
 }
 
