@@ -43,19 +43,16 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
             switch result {
             case .success(let result):
                 guard let data = result.data?.latest, let context = self?.context else {
-                    debugPrint("Error! Data or context can be nil!")
+                    debugPrint("Error! Fetched network data can be nil!")
                     return
                 }
                 for remote in data {
                     let currency = Currency(context: context)
                     currency.update(remoteCurrency: remote)
                     self?.saveContext()
-                    //self?.currencies.append(currency)
                 }
             case .failure(let error):
-                // TODO: - Show alert for user (better UX)
                 debugPrint("Failure! Error: \(error)")
-                // maybe fetch the local data in here?
             }
         }
         fetchAndReloadLocalCurrencies()

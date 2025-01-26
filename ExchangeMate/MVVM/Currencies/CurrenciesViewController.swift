@@ -70,7 +70,6 @@ class CurrenciesViewController: UIViewController, Storyboardable, UITableViewDat
         if let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyTableViewCell.cellId, for: indexPath) as? CurrencyTableViewCell,
            let currency = viewModel?.currencies[indexPath.row] {
             cell.setup(for: currency) { [weak self] currency in
-                print("HERE it is!!")
                 self?.viewModel?.toggleFavourite(currency: currency)
             }
             return cell
