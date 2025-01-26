@@ -22,3 +22,12 @@ extension Currency: Faking {
         quote = 1.0557
     }
 }
+
+extension Currency: Equatable {
+    static func ==(_ lhs: Currency, _ rhs: Currency) -> Bool {
+        lhs.date == rhs.date &&
+        lhs.baseCurrency == rhs.baseCurrency &&
+        lhs.quoteCurrency == rhs.quoteCurrency &&
+        lhs.quote == rhs.quote
+    }
+}

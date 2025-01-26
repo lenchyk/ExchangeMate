@@ -16,15 +16,17 @@ class CurrencyTableViewCell: UITableViewCell {
     @IBOutlet weak var innerContentView: UIView!
     
     var isLiked: Bool = false
+    var currency: Currency = .fakeItem()
+    var likeButtonAction: (Currency) -> () = { _ in }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         innerContentView.layer.cornerRadius = 20
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -35,13 +37,14 @@ class CurrencyTableViewCell: UITableViewCell {
     @IBAction func likeButtonPressed(_ sender: Any) {
         isLiked = !isLiked
         changeLikeButtonUI()
-        // add to local storage
+        likeButtonAction(currency)
     }
     
-    func setupUI(for currency: Currency) {
+    func setup(for currency: Currency, with likeAction: @escaping (Currency) -> ()) {
         baseQuoteLabel.text = "\(currency.baseCurrency)/\(currency.quoteCurrency)"
         currencyRateLabel.text = "\(currency.quote)"
         dateLabel.text = currency.date
+        likeButtonAction = likeAction
     }
     
     func changeLikeButtonUI() {
