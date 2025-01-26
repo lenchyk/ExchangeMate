@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0E117E2D46AB2300DE09EF /* SwopAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BC0E117D2D46AB2300DE09EF /* SwopAPI */; };
+		BC0E11812D46ABBC00DE09EF /* SwopAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E11802D46ABBC00DE09EF /* SwopAPIManager.swift */; };
 		BC6710AA2D4443B700E19227 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = BC6710A92D4443B700E19227 /* Apollo */; };
 		BC6710B52D45668300E19227 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710B42D45668300E19227 /* Currency.swift */; };
 		BC6710B72D456A4700E19227 /* Faking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710B62D456A4700E19227 /* Faking.swift */; };
@@ -30,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC0E11792D468F9400DE09EF /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
+		BC0E117A2D468FE900DE09EF /* LatestEuro.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LatestEuro.graphql; sourceTree = "<group>"; };
+		BC0E11802D46ABBC00DE09EF /* SwopAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwopAPIManager.swift; sourceTree = "<group>"; };
 		BC6710B42D45668300E19227 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		BC6710B62D456A4700E19227 /* Faking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faking.swift; sourceTree = "<group>"; };
 		BC6710B92D4571C700E19227 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0E117E2D46AB2300DE09EF /* SwopAPI in Frameworks */,
 				BC6710AA2D4443B700E19227 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +71,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC0E117B2D468FF300DE09EF /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				BC0E11792D468F9400DE09EF /* schema.graphqls */,
+				BC0E117A2D468FE900DE09EF /* LatestEuro.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		BC0E117F2D46AB8F00DE09EF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BC0E11802D46ABBC00DE09EF /* SwopAPIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		BC6710B32D45667800E19227 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +160,8 @@
 		BC96BC4D2D4258AD00D4868D /* ExchangeMate */ = {
 			isa = PBXGroup;
 			children = (
+				BC0E117F2D46AB8F00DE09EF /* API */,
+				BC0E117B2D468FF300DE09EF /* GraphQL */,
 				BC6710B32D45667800E19227 /* Models */,
 				BC96BC6F2D4414D300D4868D /* Helpers */,
 				BC96BC622D426CA900D4868D /* Application */,
@@ -214,6 +239,7 @@
 			name = ExchangeMate;
 			packageProductDependencies = (
 				BC6710A92D4443B700E19227 /* Apollo */,
+				BC0E117D2D46AB2300DE09EF /* SwopAPI */,
 			);
 			productName = ExchangeMate;
 			productReference = BC96BC4B2D4258AD00D4868D /* ExchangeMate.app */;
@@ -245,6 +271,7 @@
 			mainGroup = BC96BC422D4258AD00D4868D;
 			packageReferences = (
 				BC6710A82D4443B700E19227 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				BC0E117C2D46AB2300DE09EF /* XCLocalSwiftPackageReference "SwopAPI" */,
 			);
 			productRefGroup = BC96BC4C2D4258AD00D4868D /* Products */;
 			projectDirPath = "";
@@ -286,6 +313,7 @@
 				BC6710B52D45668300E19227 /* Currency.swift in Sources */,
 				BC96BC732D44395300D4868D /* Constants.swift in Sources */,
 				BC6710C62D4656DA00E19227 /* FavouritesViewModel.swift in Sources */,
+				BC0E11812D46ABBC00DE09EF /* SwopAPIManager.swift in Sources */,
 				BC6710BB2D4571C700E19227 /* CurrencyTableViewCell.swift in Sources */,
 				BC6710BF2D46531000E19227 /* TabBarController.swift in Sources */,
 				BC6710B72D456A4700E19227 /* Faking.swift in Sources */,
@@ -522,6 +550,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		BC0E117C2D46AB2300DE09EF /* XCLocalSwiftPackageReference "SwopAPI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = SwopAPI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		BC6710A82D4443B700E19227 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -534,6 +569,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC0E117D2D46AB2300DE09EF /* SwopAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwopAPI;
+		};
 		BC6710A92D4443B700E19227 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BC6710A82D4443B700E19227 /* XCRemoteSwiftPackageReference "apollo-ios" */;

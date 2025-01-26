@@ -16,16 +16,34 @@ class CurrenciesViewController: UIViewController, Storyboardable, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureMainUI()
+        configureInitialUI()
         setupTableView()
+        configureActions()
+    }
+    
+    // MARK: - Actions to update UI
+    private func configureActions() {
+        viewModel?.controllerActions.reloadCurrencies = { [weak self] in
+            self?.reloadCurrenciesTableView()
+        }
+    }
+    
+    private func reloadCurrenciesTableView() {
+        DispatchQueue.main.async {
+            self.updateMainUI()
+            self.currenciesTableView.reloadData()
+        }
     }
     
     // MARK: - UI Configurations
-    private func configureMainUI() {
+    private func configureInitialUI() {
         placeholderView.setupUI(for: .currencies)
+        updateMainUI()
+    }
+    
+    private func updateMainUI() {
         placeholderView.isHidden = viewModel?.currencies.count != 0
         currenciesTableView.isHidden = viewModel?.currencies.count == 0
-        
     }
     
     // MARK: - TableView

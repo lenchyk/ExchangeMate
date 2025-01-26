@@ -19,6 +19,10 @@ class FavouritesViewModel: FavouritesViewModelProtocol {
         favourites = []//[Currency.fakeItem()]
     }
     
+    deinit {
+        print(Constants.Common.deinitMessage(String(describing: self)))
+    }
+    
     func removeFromFavourites(currency: Currency) {
         favourites.removeAll { $0 == currency }
     }

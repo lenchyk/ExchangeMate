@@ -8,6 +8,12 @@
 import Foundation
 
 enum Constants {
+    enum Common {
+        static var deinitMessage: (String) -> String = { className in
+            return "Here \(className) deinited!"
+        }
+    }
+    
     enum Storyboards: String {
         case currencies = "Currencies"
         case favourites = "Favourites"

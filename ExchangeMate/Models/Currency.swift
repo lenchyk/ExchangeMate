@@ -6,12 +6,20 @@
 //
 
 import Foundation
+import SwopAPI
 
-struct Currency: Decodable {
+struct Currency {
     var date: String
     var baseCurrency: String
     var quoteCurrency: String
-    var quote: Double
+    var quote: BigDecimal
+    
+    init(remoteCurrency: LatestEuroQuery.Data.Latest) {
+        date = remoteCurrency.date.lowercased()
+        baseCurrency = remoteCurrency.baseCurrency
+        quoteCurrency = remoteCurrency.quoteCurrency
+        quote = remoteCurrency.quote
+    }
 }
 
 extension Currency: Faking {
@@ -19,7 +27,7 @@ extension Currency: Faking {
         date = "2020-04-08"
         baseCurrency = "EUR"
         quoteCurrency = "CHF"
-        quote = 1.0557
+        quote = BigDecimal(1.23993)
     }
 }
 

@@ -1,0 +1,43 @@
+{
+  "schemaNamespace" : "SwopAPI",
+  "input" : {
+    "operationSearchPaths" : [
+      "**/*.graphql"
+    ],
+    "schemaSearchPaths" : [
+      "**/*.graphqls"
+    ]
+  },
+  "output" : {
+    "testMocks" : {
+      "none" : {
+      }
+    },
+    "schemaTypes" : {
+      "path" : "./SwopAPI",
+      "moduleType" : {
+        "swiftPackageManager" : {
+        }
+      }
+    },
+    "operations" : {
+      "inSchemaModule" : {
+      }
+    }
+  },
+  "schemaDownload": {
+      "downloadMethod": {
+          "introspection": {
+              "endpointURL": "https://swop.cx/graphql?api-key=785d80f4d041f140e37aa8b0ebf958f964a6c5a29d0415c22a93794c8043d0f4",
+              "httpMethod": {
+                  "POST": {}
+              },
+              "includeDeprecatedInputValues": false,
+              "outputFormat": "SDL"
+          }
+      },
+      "downloadTimeout": 60,
+      "headers": [],
+      "outputPath": "./ExchangeMate/GraphQL/schema.graphqls"
+  }
+}
