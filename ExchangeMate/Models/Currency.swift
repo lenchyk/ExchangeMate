@@ -13,6 +13,7 @@ struct Currency {
     var baseCurrency: String
     var quoteCurrency: String
     var quote: BigDecimal
+    var isFavourited: Bool = false
     
     init(remoteCurrency: LatestEuroQuery.Data.Latest) {
         date = remoteCurrency.date.lowercased()
@@ -35,7 +36,6 @@ extension Currency: Equatable {
     static func ==(_ lhs: Currency, _ rhs: Currency) -> Bool {
         lhs.date == rhs.date &&
         lhs.baseCurrency == rhs.baseCurrency &&
-        lhs.quoteCurrency == rhs.quoteCurrency &&
-        lhs.quote == rhs.quote
+        lhs.quoteCurrency == rhs.quoteCurrency
     }
 }
