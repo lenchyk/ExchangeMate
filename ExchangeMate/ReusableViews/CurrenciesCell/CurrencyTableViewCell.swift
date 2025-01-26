@@ -15,7 +15,7 @@ class CurrencyTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var innerContentView: UIView!
     
-    var currency: Currency = .fakeItem()
+    var cellCurrency: Currency?
     var likeButtonAction: (Currency) -> () = { _ in }
     
     override func awakeFromNib() {
@@ -38,20 +38,24 @@ class CurrencyTableViewCell: UITableViewCell {
     }
     
     @IBAction func likeButtonPressed(_ sender: Any) {
+        guard let currency = cellCurrency else {
+            return
+        }
         likeButtonAction(currency)
-        changeLikeButtonUI()
+        changeLikeButtonUI(isFavourited: currency.isFavourited)
     }
     
     func setup(for currency: Currency, with likeAction: @escaping (Currency) -> ()) {
-        baseQuoteLabel.text = "\(currency.baseCurrency)/\(currency.quoteCurrency)"
-        currencyRateLabel.text = "\(currency.quote)"
-        dateLabel.text = currency.date
+        cellCurrency = currency
+        baseQuoteLabel.text = "\(currency.baseCurrencyDescription)/\(currency.quoteCurrencyDescription)"
+        currencyRateLabel.text = "\(currency.quoteDescription)"
+        dateLabel.text = currency.dateDescription
         likeButtonAction = likeAction
-        changeLikeButtonUI()
+        changeLikeButtonUI(isFavourited: currency.isFavourited)
     }
     
-    func changeLikeButtonUI() {
-        let imageName = currency.isFavourited ? Constants.Image.heartFilled : Constants.Image.heart
+    func changeLikeButtonUI(isFavourited: Bool) {
+        let imageName = isFavourited ? Constants.Image.heartFilled : Constants.Image.heart
         likeButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
 }

@@ -21,17 +21,15 @@ class CurrenciesViewController: UIViewController, Storyboardable, UITableViewDat
         configureActions()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchAndReloadLocalCurrencies()
+    }
+    
     // MARK: - Actions to update UI
     private func configureActions() {
         viewModel?.controllerActions.reloadCurrencies = { [weak self] in
             self?.reloadCurrenciesTableView()
-        }
-    }
-    
-    private func reloadCurrenciesTableView() {
-        DispatchQueue.main.async {
-            self.updateMainUI()
-            self.currenciesTableView.reloadData()
         }
     }
     
@@ -57,6 +55,13 @@ class CurrenciesViewController: UIViewController, Storyboardable, UITableViewDat
         currenciesTableView.delaysContentTouches = false
     }
     
+    private func reloadCurrenciesTableView() {
+        DispatchQueue.main.async {
+            self.updateMainUI()
+            self.currenciesTableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.currencies.count ?? 0
     }
@@ -64,8 +69,9 @@ class CurrenciesViewController: UIViewController, Storyboardable, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyTableViewCell.cellId, for: indexPath) as? CurrencyTableViewCell,
            let currency = viewModel?.currencies[indexPath.row] {
-            cell.setup(for: currency) { currency in
-                
+            cell.setup(for: currency) { [weak self] currency in
+                print("HERE it is!!")
+                self?.viewModel?.toggleFavourite(currency: currency)
             }
             return cell
         }

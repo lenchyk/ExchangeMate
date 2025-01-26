@@ -15,13 +15,31 @@ class FavouritesViewController: UIViewController, Storyboardable, UITableViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureMainUI()
+        configureInitialUI()
         setupTableView()
+        configureActions()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.fetchAndReloadFavourites()
+    }
+    
+    // MARK: Actions from ViewModel
+    private func configureActions() {
+        viewModel?.controllerActions.reloadFavourites = { [weak self] in
+            self?.reloadFavouritesTableView()
+            self?.updateMainUI()
+        }
     }
     
     // MARK: - UI Configurations
-    private func configureMainUI() {
+    private func configureInitialUI() {
         placeholderView.setupUI(for: .favourites)
+        updateMainUI()
+    }
+    
+    private func updateMainUI() {
         placeholderView.isHidden = viewModel?.favourites.count != 0
         favouritesTableView.isHidden = viewModel?.favourites.count == 0
     }
@@ -37,6 +55,13 @@ class FavouritesViewController: UIViewController, Storyboardable, UITableViewDel
         favouritesTableView.delaysContentTouches = false
     }
     
+    private func reloadFavouritesTableView() {
+        DispatchQueue.main.async {
+            self.updateMainUI()
+            self.favouritesTableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel?.favourites.count ?? 0
     }
@@ -45,7 +70,7 @@ class FavouritesViewController: UIViewController, Storyboardable, UITableViewDel
         if let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyTableViewCell.cellId, for: indexPath) as? CurrencyTableViewCell,
            let currency = viewModel?.favourites[indexPath.row] {
             cell.setup(for: currency) { [weak self] currency in
-                self?.viewModel?.removeFromFavourites(currency: currency)
+                self?.viewModel?.toggleFavourite(currency: currency)
             }
             return cell
         }
