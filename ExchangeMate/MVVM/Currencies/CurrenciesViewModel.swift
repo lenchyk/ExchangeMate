@@ -8,13 +8,14 @@
 import Foundation
 
 protocol CurrenciesViewModelProtocol {
-    
+    var currencies: [Currency] { get }
 }
 
 class CurrenciesViewModel: CurrenciesViewModelProtocol {
     var coordinator: AppCoordinator?
+    var currencies: [Currency]
     
     init() {
-        
+        currencies = Currency.fakeItems(count: 10)
     }
 }

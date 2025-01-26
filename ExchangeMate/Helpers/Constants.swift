@@ -11,4 +11,9 @@ enum Constants {
     enum Storyboards: String {
         case currencies = "Currencies"
     }
+    
+    enum Image {
+        static let heart = "heart"
+        static let heartFilled = "heart.fill"
+    }
 }
