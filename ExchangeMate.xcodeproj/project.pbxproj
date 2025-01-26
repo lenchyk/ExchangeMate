@@ -11,6 +11,12 @@
 		BC6710B72D456A4700E19227 /* Faking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710B62D456A4700E19227 /* Faking.swift */; };
 		BC6710BB2D4571C700E19227 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710B92D4571C700E19227 /* CurrencyTableViewCell.swift */; };
 		BC6710BC2D4571C700E19227 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6710BA2D4571C700E19227 /* CurrencyTableViewCell.xib */; };
+		BC6710BF2D46531000E19227 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710BE2D46531000E19227 /* TabBarController.swift */; };
+		BC6710C32D4656C400E19227 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710C12D4656C400E19227 /* FavouritesViewController.swift */; };
+		BC6710C62D4656DA00E19227 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710C52D4656DA00E19227 /* FavouritesViewModel.swift */; };
+		BC6710C82D46588800E19227 /* Favourites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6710C72D46588800E19227 /* Favourites.storyboard */; };
+		BC6710CC2D465A0700E19227 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710CB2D465A0700E19227 /* PlaceholderView.swift */; };
+		BC6710CE2D465A3000E19227 /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6710CD2D465A3000E19227 /* PlaceholderView.xib */; };
 		BC96BC4F2D4258AD00D4868D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */; };
 		BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */; };
 		BC96BC562D4258AD00D4868D /* Currencies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC542D4258AD00D4868D /* Currencies.storyboard */; };
@@ -27,6 +33,12 @@
 		BC6710B62D456A4700E19227 /* Faking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faking.swift; sourceTree = "<group>"; };
 		BC6710B92D4571C700E19227 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		BC6710BA2D4571C700E19227 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
+		BC6710BE2D46531000E19227 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BC6710C12D4656C400E19227 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BC6710C52D4656DA00E19227 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
+		BC6710C72D46588800E19227 /* Favourites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favourites.storyboard; sourceTree = "<group>"; };
+		BC6710CB2D465A0700E19227 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		BC6710CD2D465A3000E19227 /* PlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
 		BC96BC4B2D4258AD00D4868D /* ExchangeMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +80,42 @@
 			path = CurrenciesCell;
 			sourceTree = "<group>";
 		};
+		BC6710BD2D4652E200E19227 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BC6710BE2D46531000E19227 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BC6710C02D4656A900E19227 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				BC6710C12D4656C400E19227 /* FavouritesViewController.swift */,
+				BC6710C52D4656DA00E19227 /* FavouritesViewModel.swift */,
+				BC6710C72D46588800E19227 /* Favourites.storyboard */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		BC6710C92D46598B00E19227 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				BC6710B82D4571A500E19227 /* CurrenciesCell */,
+				BC6710CA2D46599800E19227 /* PlaceholderView */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		BC6710CA2D46599800E19227 /* PlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+				BC6710CB2D465A0700E19227 /* PlaceholderView.swift */,
+				BC6710CD2D465A3000E19227 /* PlaceholderView.xib */,
+			);
+			path = PlaceholderView;
+			sourceTree = "<group>";
+		};
 		BC96BC422D4258AD00D4868D = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +137,6 @@
 			children = (
 				BC6710B32D45667800E19227 /* Models */,
 				BC96BC6F2D4414D300D4868D /* Helpers */,
-				BC96BC6E2D4414CA00D4868D /* Extensions */,
 				BC96BC622D426CA900D4868D /* Application */,
 				BC96BC652D42EDDF00D4868D /* Coordinator */,
 				BC96BC682D42EEBD00D4868D /* MVVM */,
@@ -119,7 +166,10 @@
 		BC96BC682D42EEBD00D4868D /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				BC6710C92D46598B00E19227 /* ReusableViews */,
+				BC6710BD2D4652E200E19227 /* TabBar */,
 				BC96BC692D42EED900D4868D /* Currencies */,
+				BC6710C02D4656A900E19227 /* Favourites */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -127,19 +177,11 @@
 		BC96BC692D42EED900D4868D /* Currencies */ = {
 			isa = PBXGroup;
 			children = (
-				BC6710B82D4571A500E19227 /* CurrenciesCell */,
 				BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */,
 				BC96BC6A2D42EF1E00D4868D /* CurrenciesViewModel.swift */,
 				BC96BC542D4258AD00D4868D /* Currencies.storyboard */,
 			);
 			path = Currencies;
-			sourceTree = "<group>";
-		};
-		BC96BC6E2D4414CA00D4868D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BC96BC6F2D4414D300D4868D /* Helpers */ = {
@@ -210,10 +252,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6710CE2D465A3000E19227 /* PlaceholderView.xib in Resources */,
 				BC6710BC2D4571C700E19227 /* CurrencyTableViewCell.xib in Resources */,
 				BC96BC5B2D4258AF00D4868D /* LaunchScreen.storyboard in Resources */,
 				BC96BC582D4258AF00D4868D /* Assets.xcassets in Resources */,
 				BC96BC562D4258AD00D4868D /* Currencies.storyboard in Resources */,
+				BC6710C82D46588800E19227 /* Favourites.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,14 +268,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6710CC2D465A0700E19227 /* PlaceholderView.swift in Sources */,
 				BC96BC642D426CBF00D4868D /* AppCoordinator.swift in Sources */,
 				BC96BC712D4414E600D4868D /* Storyboardable.swift in Sources */,
 				BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */,
+				BC6710C32D4656C400E19227 /* FavouritesViewController.swift in Sources */,
 				BC96BC6B2D42EF1E00D4868D /* CurrenciesViewModel.swift in Sources */,
 				BC96BC4F2D4258AD00D4868D /* AppDelegate.swift in Sources */,
 				BC6710B52D45668300E19227 /* Currency.swift in Sources */,
 				BC96BC732D44395300D4868D /* Constants.swift in Sources */,
+				BC6710C62D4656DA00E19227 /* FavouritesViewModel.swift in Sources */,
 				BC6710BB2D4571C700E19227 /* CurrencyTableViewCell.swift in Sources */,
+				BC6710BF2D46531000E19227 /* TabBarController.swift in Sources */,
 				BC6710B72D456A4700E19227 /* Faking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,9 @@ import UIKit
 protocol Coordinator {
     var parentCoordinator: Coordinator? { get set }
     var children: [Coordinator] { get set }
-    var navigationController : UINavigationController { get set }
+    var rootViewController : TabBarController { get set }
     
     func start()
-    // func finish()
 }
 
 class AppCoordinator: Coordinator {
@@ -21,13 +20,18 @@ class AppCoordinator: Coordinator {
     var children: [Coordinator] = []
     var window: UIWindow?
     
-    lazy var navigationController: UINavigationController = {
-        return UINavigationController()
+    lazy var rootViewController: TabBarController = {
+        let tabBarVC = TabBarController()
+        return tabBarVC
     }()
     
     lazy var currenciesViewModel: CurrenciesViewModelProtocol = {
         let viewModel = CurrenciesViewModel()
-        viewModel.coordinator = self
+        return viewModel
+    }()
+    
+    lazy var favouritesViewModel: FavouritesViewModelProtocol = {
+        let viewModel = FavouritesViewModel()
         return viewModel
     }()
     
@@ -38,15 +42,47 @@ class AppCoordinator: Coordinator {
     func start() {
         debugPrint("Starting App Coordinator")
         guard let window = window else { return }
-        window.rootViewController = navigationController
+        window.rootViewController = rootViewController
         window.makeKeyAndVisible()
-        goToCurrencies()
+        setupTabs()
     }
     
-    private func goToCurrencies() {
-        if let currenciesViewController = CurrenciesViewController.instantiate(from: .currencies) {
-            currenciesViewController.viewModel = currenciesViewModel
-            navigationController.setViewControllers([currenciesViewController], animated: false)
+    private func setupTabs() {
+        guard let currenciesViewController = CurrenciesViewController.instantiate(from: .currencies) else {
+            return
         }
+        currenciesViewController.viewModel = currenciesViewModel
+        
+        guard let favouritesViewController = FavouritesViewController.instantiate(from: .favourites) else {
+            return
+        }
+        favouritesViewController.viewModel = favouritesViewModel
+        
+        let currenciesNavigationController = createNavigationViewController(
+            with: Constants.Storyboards.currencies.rawValue,
+            systemImage: Constants.Image.eurosign,
+            vc: currenciesViewController
+        )
+        
+        let favouritesNavigationController = createNavigationViewController(
+            with: Constants.Storyboards.favourites.rawValue,
+            systemImage: Constants.Image.heart,
+            vc: favouritesViewController
+        )
+        
+        rootViewController.setViewControllers([currenciesNavigationController, favouritesNavigationController], animated: true)
+    }
+    
+    private func createNavigationViewController(
+        with title: String,
+        systemImage: String,
+        vc: UIViewController
+    ) -> UINavigationController {
+        let navigationVC = UINavigationController(rootViewController: vc)
+        navigationVC.tabBarItem.title = title
+        navigationVC.tabBarItem.image = UIImage(systemName: systemImage)
+        
+        navigationVC.viewControllers.first?.navigationItem.title = title
+        return navigationVC
     }
 }

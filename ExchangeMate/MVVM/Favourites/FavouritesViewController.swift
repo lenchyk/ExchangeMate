@@ -1,19 +1,18 @@
 //
-//  CurrenciesViewController.swift
+//  FavouritesViewController.swift
 //  ExchangeMate
 //
-//  Created by Lena Soroka on 23.01.2025.
+//  Created by Lena Soroka on 26.01.2025.
 //
 
 import UIKit
 
-class CurrenciesViewController: UIViewController, Storyboardable, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var currenciesTableView: UITableView!
+class FavouritesViewController: UIViewController, Storyboardable, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var favouritesTableView: UITableView!
     @IBOutlet weak var placeholderView: PlaceholderView!
     
-    var viewModel: CurrenciesViewModelProtocol?
-    
+    var viewModel: FavouritesViewModelProtocol?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMainUI()
@@ -22,35 +21,35 @@ class CurrenciesViewController: UIViewController, Storyboardable, UITableViewDat
     
     // MARK: - UI Configurations
     private func configureMainUI() {
-        placeholderView.setupUI(for: .currencies)
-        placeholderView.isHidden = viewModel?.currencies.count != 0
-        currenciesTableView.isHidden = viewModel?.currencies.count == 0
-        
+        placeholderView.setupUI(for: .favourites)
+        placeholderView.isHidden = viewModel?.favourites.count != 0
+        favouritesTableView.isHidden = viewModel?.favourites.count == 0
     }
     
     // MARK: - TableView
     private func setupTableView() {
-        currenciesTableView.register(
+        favouritesTableView.register(
             UINib(nibName: CurrencyTableViewCell.cellId, bundle: nil),
             forCellReuseIdentifier: CurrencyTableViewCell.cellId
         )
-        currenciesTableView.delegate = self
-        currenciesTableView.dataSource = self
-        currenciesTableView.delaysContentTouches = false
+        favouritesTableView.delegate = self
+        favouritesTableView.dataSource = self
+        favouritesTableView.delaysContentTouches = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.currencies.count ?? 0
+        viewModel?.favourites.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyTableViewCell.cellId, for: indexPath) as? CurrencyTableViewCell,
-           let currency = viewModel?.currencies[indexPath.row] {
-            cell.setup(for: currency) { currency in
-                
+           let currency = viewModel?.favourites[indexPath.row] {
+            cell.setup(for: currency) { [weak self] currency in
+                self?.viewModel?.removeFromFavourites(currency: currency)
             }
             return cell
         }
         return UITableViewCell()
     }
 }
+
