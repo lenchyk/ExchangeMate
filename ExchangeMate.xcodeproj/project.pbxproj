@@ -152,6 +152,16 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		BC6912D42D46F79D00D497F0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BC96BC592D4258AF00D4868D /* LaunchScreen.storyboard */,
+				BC96BC572D4258AF00D4868D /* Assets.xcassets */,
+				BC96BC5C2D4258AF00D4868D /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BC96BC422D4258AD00D4868D = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		BC96BC4D2D4258AD00D4868D /* ExchangeMate */ = {
 			isa = PBXGroup;
 			children = (
+				BC6912D42D46F79D00D497F0 /* Resources */,
 				BC96BC622D426CA900D4868D /* Application */,
 				BC6912D12D46DD7700D497F0 /* CoreData */,
 				BC0E117F2D46AB8F00DE09EF /* API */,
@@ -180,9 +191,6 @@
 				BC6710C92D46598B00E19227 /* ReusableViews */,
 				BC96BC652D42EDDF00D4868D /* Coordinator */,
 				BC96BC682D42EEBD00D4868D /* MVVM */,
-				BC96BC572D4258AF00D4868D /* Assets.xcassets */,
-				BC96BC592D4258AF00D4868D /* LaunchScreen.storyboard */,
-				BC96BC5C2D4258AF00D4868D /* Info.plist */,
 			);
 			path = ExchangeMate;
 			sourceTree = "<group>";
@@ -483,10 +491,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94V7T8FB6N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExchangeMate/Info.plist;
+				INFOPLIST_FILE = ExchangeMate/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Currencies;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -516,10 +524,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94V7T8FB6N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExchangeMate/Info.plist;
+				INFOPLIST_FILE = ExchangeMate/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Currencies;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
