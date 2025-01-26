@@ -20,6 +20,7 @@
 		BC6710C82D46588800E19227 /* Favourites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6710C72D46588800E19227 /* Favourites.storyboard */; };
 		BC6710CC2D465A0700E19227 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710CB2D465A0700E19227 /* PlaceholderView.swift */; };
 		BC6710CE2D465A3000E19227 /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6710CD2D465A3000E19227 /* PlaceholderView.xib */; };
+		BC6912CC2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC6912CA2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodeld */; };
 		BC96BC4F2D4258AD00D4868D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */; };
 		BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */; };
 		BC96BC562D4258AD00D4868D /* Currencies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC96BC542D4258AD00D4868D /* Currencies.storyboard */; };
@@ -45,6 +46,7 @@
 		BC6710C72D46588800E19227 /* Favourites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favourites.storyboard; sourceTree = "<group>"; };
 		BC6710CB2D465A0700E19227 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		BC6710CD2D465A3000E19227 /* PlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
+		BC6912CB2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrencyDataModel.xcdatamodel; sourceTree = "<group>"; };
 		BC96BC4B2D4258AD00D4868D /* ExchangeMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC96BC4E2D4258AD00D4868D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC96BC522D4258AD00D4868D /* CurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				BC6710B42D45668300E19227 /* Currency.swift */,
+				BC6912CA2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				BC6710BB2D4571C700E19227 /* CurrencyTableViewCell.swift in Sources */,
 				BC6710BF2D46531000E19227 /* TabBarController.swift in Sources */,
 				BC6710B72D456A4700E19227 /* Faking.swift in Sources */,
+				BC6912CC2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +583,19 @@
 			productName = Apollo;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		BC6912CA2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC6912CB2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodel */,
+			);
+			currentVersion = BC6912CB2D46C62C00D497F0 /* CurrencyDataModel.xcdatamodel */;
+			path = CurrencyDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BC96BC432D4258AD00D4868D /* Project object */;
 }
