@@ -91,7 +91,6 @@
 			children = (
 				BC6710B32D45667800E19227 /* Models */,
 				BC96BC6F2D4414D300D4868D /* Helpers */,
-				BC96BC6E2D4414CA00D4868D /* Extensions */,
 				BC96BC622D426CA900D4868D /* Application */,
 				BC96BC652D42EDDF00D4868D /* Coordinator */,
 				BC96BC682D42EEBD00D4868D /* MVVM */,
@@ -135,13 +134,6 @@
 				BC96BC542D4258AD00D4868D /* Currencies.storyboard */,
 			);
 			path = Currencies;
-			sourceTree = "<group>";
-		};
-		BC96BC6E2D4414CA00D4868D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BC96BC6F2D4414D300D4868D /* Helpers */ = {
