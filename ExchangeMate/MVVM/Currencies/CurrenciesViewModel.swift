@@ -67,11 +67,11 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
                     currency.update(remoteCurrency: remote)
                     self?.saveContext()
                 }
+                self?.fetchAndReloadLocalCurrencies()
             case .failure(let error):
                 debugPrint(Constants.Error.universal(error.localizedDescription))
             }
         }
-        fetchAndReloadLocalCurrencies()
     }
     
     func toggleFavourite(currency: Currency) {
