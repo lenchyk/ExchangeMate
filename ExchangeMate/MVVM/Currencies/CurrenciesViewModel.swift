@@ -30,11 +30,28 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
     
     init() {
         controllerActions = .init()
+        clearDataIfNeeded()
         fetchCurrencies()
     }
     
     deinit {
         print(Constants.Common.deinitMessage(String(describing: self)))
+    }
+    
+    // removing the yesterday's data
+    private func clearDataIfNeeded() {
+        do {
+            currencies = try context.fetch(Currency.fetchRequest())
+            if let currency = currencies.first, currency.date?.isToday == false {
+                for currency in currencies {
+                    context.delete(currency)
+                }
+                saveContext()
+            }
+        }
+        catch {
+            debugPrint(Constants.Error.removing)
+        }
     }
     
     private func fetchCurrencies() {

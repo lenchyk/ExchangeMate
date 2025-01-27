@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC0E117E2D46AB2300DE09EF /* SwopAPI in Frameworks */ = {isa = PBXBuildFile; productRef = BC0E117D2D46AB2300DE09EF /* SwopAPI */; };
 		BC0E11812D46ABBC00DE09EF /* SwopAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E11802D46ABBC00DE09EF /* SwopAPIManager.swift */; };
+		BC20045C2D47B77F0081393E /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC20045B2D47B77F0081393E /* String+extensions.swift */; };
 		BC6710AA2D4443B700E19227 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = BC6710A92D4443B700E19227 /* Apollo */; };
 		BC6710BB2D4571C700E19227 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6710B92D4571C700E19227 /* CurrencyTableViewCell.swift */; };
 		BC6710BC2D4571C700E19227 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6710BA2D4571C700E19227 /* CurrencyTableViewCell.xib */; };
@@ -36,6 +37,7 @@
 		BC0E11792D468F9400DE09EF /* schema.graphqls */ = {isa = PBXFileReference; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		BC0E117A2D468FE900DE09EF /* LatestEuro.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LatestEuro.graphql; sourceTree = "<group>"; };
 		BC0E11802D46ABBC00DE09EF /* SwopAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwopAPIManager.swift; sourceTree = "<group>"; };
+		BC20045B2D47B77F0081393E /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		BC6710B92D4571C700E19227 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		BC6710BA2D4571C700E19227 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
 		BC6710BE2D46531000E19227 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				BC96BC722D44395300D4868D /* Constants.swift */,
 				BC96BC702D4414E600D4868D /* Storyboardable.swift */,
+				BC20045B2D47B77F0081393E /* String+extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				BC96BC642D426CBF00D4868D /* AppCoordinator.swift in Sources */,
 				BC96BC712D4414E600D4868D /* Storyboardable.swift in Sources */,
 				BC96BC532D4258AD00D4868D /* CurrenciesViewController.swift in Sources */,
+				BC20045C2D47B77F0081393E /* String+extensions.swift in Sources */,
 				BC6710C32D4656C400E19227 /* FavouritesViewController.swift in Sources */,
 				BC96BC6B2D42EF1E00D4868D /* CurrenciesViewModel.swift in Sources */,
 				BC6912CF2D46D90900D497F0 /* Currency+CoreDataClass.swift in Sources */,

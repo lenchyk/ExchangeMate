@@ -40,8 +40,9 @@ enum Constants {
             return "Error! \(error)!"
         }
         static let networkFetch = "Error! Fetched network data can be nil!"
-        static let currenciesFetch = "Error occured while fetching Currencies!"
+        static let currenciesFetch = "Error occured while fetching currencies!"
         static let favouritesFetch = "Error occured while fetching favourites"
         static let saving = "Error occured while saving the context!"
+        static let removing = "Error occured while removing currencies"
     }
 }
