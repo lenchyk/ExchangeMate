@@ -28,7 +28,7 @@
   "schemaDownload": {
       "downloadMethod": {
           "introspection": {
-              "endpointURL": "https://swop.cx/graphql?api-key=785d80f4d041f140e37aa8b0ebf958f964a6c5a29d0415c22a93794c8043d0f4",
+              "endpointURL": "https://swop.cx/graphql",
               "httpMethod": {
                   "POST": {}
               },
@@ -37,7 +37,9 @@
           }
       },
       "downloadTimeout": 60,
-      "headers": [],
+      "headers": {
+          "Authorization": ""
+      },
       "outputPath": "./ExchangeMate/GraphQL/schema.graphqls"
   }
 }
