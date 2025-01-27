@@ -9,11 +9,24 @@ import Foundation
 import Apollo
 
 class SwopAPIManager {
+    private enum API {
+        static let GRAPHQL_API_KEY = "GRAPHQL_API_KEY"
+        static var endpoint: (String) -> String = { apiKey in
+            return "https://swop.cx/graphql?api-key=\(apiKey)"
+        }
+    }
     static let shared = SwopAPIManager()
 
-    let apollo: ApolloClient
+    var apollo: ApolloClient?
 
     init() {
-        apollo = ApolloClient(url: URL(string: "https://swop.cx/graphql?api-key=785d80f4d041f140e37aa8b0ebf958f964a6c5a29d0415c22a93794c8043d0f4")!)
+        setupApolloClient()
+    }
+    
+    private func setupApolloClient() {
+        if let apiKey = ProcessInfo.processInfo.environment[API.GRAPHQL_API_KEY],
+           let url = URL(string: API.endpoint(apiKey)) {
+            apollo = ApolloClient(url: url)
+        }
     }
 }

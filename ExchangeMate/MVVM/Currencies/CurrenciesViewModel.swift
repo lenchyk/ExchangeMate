@@ -38,7 +38,7 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
     }
     
     private func fetchCurrencies() {
-        SwopAPIManager.shared.apollo.fetch(query: LatestEuroQuery()) { [weak self] result in
+        SwopAPIManager.shared.apollo?.fetch(query: LatestEuroQuery()) { [weak self] result in
             switch result {
             case .success(let result):
                 guard let data = result.data?.latest, let context = self?.context else {
