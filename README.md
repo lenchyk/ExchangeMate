@@ -7,7 +7,9 @@ This is the app where you can view latest currency rates with base currency as E
 ## How to build and launch the app from XCode
 You have to do some steps in order to build the app in Xcode. So, let's get started.
 
-As we have GraphQL for network layer, we have to make sure to configure all necessary settings. Open the terminal, navigate to your root folder where ExchangeMate is located (there you can also see files like apollo-codegen-config.json and the project file itself) and run the next command:
+As we have GraphQL for network layer, we have to make sure to configure all necessary settings. The first one is to add apollo-ios-cli to your project file: go to Xcode project and right-click (click with two fingers) onto Project file. You will see downdrop menu with one grey option Apollo below. Select **Install CLI**.
+
+ After this open the terminal, navigate to your root folder where ExchangeMate is located (there you can also see files like apollo-codegen-config.json and the project file itself) and run the next command:
 ```ruby
 touch .env
 ```
