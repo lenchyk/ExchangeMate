@@ -22,9 +22,13 @@ struct FavouritesControllerActions {
 }
 
 class FavouritesViewModel: FavouritesViewModelProtocol {
+    private enum Favourites {
+        static let predicate = "isFavourited == TRUE"
+    }
+    
     private(set) var favourites: [Currency] = []
     var controllerActions: FavouritesControllerActions
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     init() {
         controllerActions = .init()
@@ -36,14 +40,15 @@ class FavouritesViewModel: FavouritesViewModelProtocol {
     }
     
     func fetchAndReloadFavourites() {
+        guard let context else { return }
         do {
             let request = Currency.fetchRequest()
-            request.predicate = NSPredicate(format: "isFavourited == TRUE")
+            request.predicate = NSPredicate(format: Favourites.predicate)
             favourites = try context.fetch(request)
             controllerActions.reloadFavourites()
         }
         catch {
-            debugPrint("Error >>> while fetching favourites")
+            debugPrint(Constants.Error.favouritesFetch)
         }
     }
     
@@ -55,10 +60,10 @@ class FavouritesViewModel: FavouritesViewModelProtocol {
     
     private func saveContext() {
         do {
-            try context.save()
+            try context?.save()
         }
         catch {
-           debugPrint("Error >>> while saving the Favourite!")
+           debugPrint(Constants.Error.saving)
         }
     }
 }

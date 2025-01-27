@@ -38,12 +38,11 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
     }
     
     private func fetchCurrencies() {
-        // TODO: - check for network connection and fetch from local storage if needed
         SwopAPIManager.shared.apollo.fetch(query: LatestEuroQuery()) { [weak self] result in
             switch result {
             case .success(let result):
                 guard let data = result.data?.latest, let context = self?.context else {
-                    debugPrint("Error! Fetched network data can be nil!")
+                    debugPrint(Constants.Error.networkFetch)
                     return
                 }
                 for remote in data {
@@ -52,7 +51,7 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
                     self?.saveContext()
                 }
             case .failure(let error):
-                debugPrint("Failure! Error: \(error)")
+                debugPrint(Constants.Error.universal(error.localizedDescription))
             }
         }
         fetchAndReloadLocalCurrencies()
@@ -70,7 +69,7 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
             controllerActions.reloadCurrencies()
         }
         catch {
-            debugPrint("Error >>> while fetching Currencies!")
+            debugPrint(Constants.Error.currenciesFetch)
         }
     }
     
@@ -79,7 +78,7 @@ class CurrenciesViewModel: CurrenciesViewModelProtocol {
             try context.save()
         }
         catch {
-           debugPrint("Error >>> while saving the Favourite!")
+            debugPrint(Constants.Error.saving)
         }
     }
 }

@@ -40,7 +40,6 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        debugPrint("Starting App Coordinator")
         guard let window = window else { return }
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()

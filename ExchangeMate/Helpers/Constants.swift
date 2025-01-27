@@ -34,4 +34,14 @@ enum Constants {
             static let text = "You have not added any favourite currencies yet."
         }
     }
+    
+    enum Error {
+        static var universal: (String) -> String = { error in
+            return "Error! \(error)!"
+        }
+        static let networkFetch = "Error! Fetched network data can be nil!"
+        static let currenciesFetch = "Error occured while fetching Currencies!"
+        static let favouritesFetch = "Error occured while fetching favourites"
+        static let saving = "Error occured while saving the context!"
+    }
 }
