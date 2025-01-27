@@ -1,9 +1,8 @@
 # ExchangeMate
 
 This is the app where you can view latest currency rates with base currency as Euro. Also you can add the currencies you liked to you favourites. The app has two tabs which are Currencies and Favourites. You can view these currencies in an offline mode if you have prefetched the data before. You can view screenshots as an example of how the app works.
-<img src="https://github.com/lenchyk/ExchangeMate/blob/chore/readme/Screenshots/CurTab.png" alt="Example Image" style="width:auto; height:50%;">
-![alt text](https://github.com/lenchyk/ExchangeMate/blob/chore/readme/Screenshots/CurTab.png) {height=400px width=500px}
-![alt text](https://github.com/lenchyk/ExchangeMate/blob/chore/readme/Screenshots/FavTab.png)
+<img src="https://github.com/lenchyk/ExchangeMate/blob/develop/Screenshots/CurTab.png" alt="Example Image" style="width:100; height:200;">
+<img src="https://github.com/lenchyk/ExchangeMate/blob/develop/Screenshots/FavTab.png" alt="Example Image" style="width:100; height:200;">
 
 ## How to build and launch the app from XCode
 You have to do some steps in order to build the app in Xcode. So, let's get started.
